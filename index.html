@@ -521,10 +521,12 @@
 
     const filtered = mood ? allMovies.filter(movie => movie.mood === mood) : allMovies;
 
-    if (filtered.length === 0) {
-      alert('No movies found matching your filters and mood. Please try different filters.');
-      return;
-    }
+   if (filtered.length === 0) {
+  const container = document.getElementById('recommendationList');
+  container.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; font-size: 1.2rem; opacity: 0.8;">No movies found matching your filters.</p>`;
+  return;
+}
+
 
     displayRecommendations(filtered);
   }
