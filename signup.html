@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup - StreamWise</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    </style>
+</head>
+<body>
+  <link rel="stylesheet" href="style.css">
+
+  <form class="form" id="signupForm">
+    <p class="title">Register</p>
+    <p class="message">Signup now and get full access to our app.</p>
+
+    <div class="flex">
+      <label>
+        <input class="input" type="text" id="firstName" required>
+        <span>Firstname</span>
+      </label>
+
+      <label>
+          <input class="input" type="text" id="lastName" required>
+        <span>Lastname</span>
+      </label>
+    </div>
+    
+    <label>
+      <input class="input" type="email" id="email" required>
+      <span>Email</span>
+    </label>
+
+    <lable>
+      <input class="type" type="passsword" id="password" required>
+      <span>Password</span>
+    </lable>
+
+    <label>
+      <input class="input" type="password" id="confirmPassword" required>
+      <spam>Confirm password</spam>
+    </label>
+
+    <button type="submit" class"submit">Submit</button>
+
+    <p class="signin">Already have an account? <a herf="login.html">Signin</a></p>
+  </form>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert("password do not match!");
+        retuen;
+      }
+
+      const user = { firstName, lastName, email, password };
+
+      localStorage.setItem('userData', JSON.stringify(user));
+
+      alert("Signup successfull! You can now login.");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>
