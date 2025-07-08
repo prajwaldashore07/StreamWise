@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 350px;
+    width: 90%;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00bfff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.message, .signup {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.signup a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid rgba(105, 105, 105, 0.4);
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input:focus {
+    border-color: #00bfff;
+}
+
+.submit {
+    padding: 10px;
+    background-color: #00bfff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: rgba(0, 191, 255, 0.7);
+}
+
+.submit:focus {
+    outline: 2px solid #00bfff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 400px) {
+    .form {
+        padding: 15px;
+    }
+}

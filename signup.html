@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Signup - StreamWise</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    </style>
+  <link rel="stylesheet" href="signupStyles.css">
+
 </head>
 <body>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signupStyles.css">
 
   <form class="form" id="signupForm">
     <p class="title">Register</p>
-    <p class="message">Signup now and get full access to our app.</p>
+    <p class="message">Signup now and get full access to StreamWise.</p>
 
     <div class="flex">
       <label>
@@ -31,19 +30,19 @@
       <span>Email</span>
     </label>
 
-    <lable>
-      <input class="type" type="passsword" id="password" required>
+    <label>
+      <input class="input" type="password" id="password" required>
       <span>Password</span>
-    </lable>
+    </label>
 
     <label>
       <input class="input" type="password" id="confirmPassword" required>
-      <spam>Confirm password</spam>
+      <span>Confirm password</span>
     </label>
 
-    <button type="submit" class"submit">Submit</button>
+    <button type="submit" class="submit">Submit</button>
 
-    <p class="signin">Already have an account? <a herf="login.html">Signin</a></p>
+    <p class="signin">Already have an account? <a href="login.html">Signin</a></p>
   </form>
 
   <script>
@@ -58,7 +57,7 @@
 
       if (password !== confirmPassword) {
         alert("password do not match!");
-        retuen;
+        return;
       }
 
       const user = { firstName, lastName, email, password };

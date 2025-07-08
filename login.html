@@ -3,100 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - StreamWise</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #1a1a1a;
-    }
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 350px;
-       border-radius: 20px;
-      background-color: #1a1a1a;
-      color: #fff;
-      border: 1px solid #333;
-    }
-
-    .title {
-      font-size: 28px;
-      font-weight: 600;
-      color: #00bfff;
-      text-align: center;
-    }
-
-    .message {
-      font-size: 14.5px;
-      color: rgba(255, 255, 255, 0.7);
-      text-align: center;
-    }
-
-    .form label {
-      position: relative;
-      width: 100%;
-    }
-
-    .input {
-      background-color: #333;
-      color: #fff;
-      width: 100%;
-      padding: 15px 10px 5px 10px;
-      border: 1px solid rgba(105, 105, 105, 0.4);
-      border-radius: 10px;
-      outline: none;
-    }
-
-    .input + span {
-      color: rgba(255, 255, 255, 0.5);
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      font-size: 0.9em;
-      pointer-events: none;
-      transition: 0.3s ease;
-    }
-
-    .input:focus + span,
-    .input:valid + span {
-      color: #00bfff;
-      top: 0px;
-      font-size: 0.7em;
-      font-weight: 600;
-    }
-
-    .submit {
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      background-color: #00bfff;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .submit:hover {
-      background-color: #00bfff96;
-    }
-
-    .signup a {
-      color: #00bfff;
-      text-decoration: none;
-    }
-
-    .signup a:hover {
-      text-decoration: underline
-    }
-  </style>
+  <link rel="stylesheet" href="loginStyles.css">
+  
 </head>
 <body>
-  <link rel="stylesheet" href="style.css">
 
 <form class="form" id="loginForm">
   <p class="title">Login</p>
@@ -104,7 +14,7 @@
 
   <label>
     <input class="input" type="email" id="email" required>
-    <spam>Email</spam>
+    <span>Email</span>
   </label>
 
   <label>
