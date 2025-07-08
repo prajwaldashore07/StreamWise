@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 350px;
+    width: 90%;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+  }
+  
+
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00bfff;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .title::before,
+  .title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background: #00bfff;
+    border-radius: 50%;
+    animation: pulse 1.5s linear infinite;
+  }
+  
+  .title::before {
+    left: -20px;
+  }
+  
+  .title::after {
+    right: -20px;
+  }
+  
+
+  .message, .signin, .signup {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+  }
+  
+
+  .signin a, .signup a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  
+  .signin a:hover, .signup a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .form label {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 15px 10px 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid rgba(105, 105, 105, 0.4);
+    border-radius: 10px;
+    outline: none;
+  }
+  
+  .input + span {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9em;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+  
+  .input:focus + span,
+  .input:valid + span {
+    color: #00bfff;
+    top: 0;
+    font-size: 0.7em;
+    font-weight: bold;
+  }
+  
+ 
+  .flex {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+  
+
+  .submit {
+    padding: 10px;
+    background-color: #00bfff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit:hover {
+    background-color: rgba(0, 191, 255, 0.7);
+  }
+  
+
+  @keyframes pulse {
+    0% {
+      transform: translateY(-50%) scale(0.9);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-50%) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
