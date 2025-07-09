@@ -1,4 +1,4 @@
-const genremap ={
+const genreMap ={
   Action:28,
   Comedy:35,
   Drama:18,
@@ -22,13 +22,13 @@ document.getElementById('resetFilters').addEventListener('click',resetFilters);
 document.getElementById('ratingRange').addEventListener('input',()=>{
   document.getElementById('ratingValue').textContent= document.getElementById('ratingRange').value;
 });
-document.getElementByld('searchBtn').addEventListener('click',searchMovies);
+document.getElementById('searchBtn').addEventListener('click',searchMovies);
 document.querySelector('.signup-btn').addEventListener('click',()=>{
   alert('signup functionality is not yet implemented. Please try again later or contact support.');
 });
 
 async function searchMovies(){
-  const query=document.getElementByld('searchInput').value.trim();
+  const query=document.getElementById('searchInput').value.trim();
   if(!query){
     alert('Please enter a movie name to search.');
     return;
@@ -83,9 +83,8 @@ async function fetchMoviesFromTMDB(filters={},page=1){
       language:movie.original_language,
       mood:getMoodFromRating(movie.vote_average),
       genre:filters.genre||'Varied',
-      poster:movie.poster_path?https://image.tmdb.org/t/p/w500${movie.poster_path}:
-      'https://via.placeholder.com/230x320?text+No+Image',
-      overview:movie.overview
+      poster: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/230x320?text=No+Image',
+      overview:movie.overview,
   }));
 }catch(error){
 console.error('Error fetching from TMDB:',error);
@@ -103,16 +102,16 @@ if(rating>=8)return'Motivated';
 async function getRecommendations(){
   const filters={
     language: languageMap[document.getElementById('language').value]||undefined,
-    minRating:parseFloat[document.getElementById('ratingRange').value]||undefined,
+    minRating:parseFloat(document.getElementById('ratingRange').value)||undefined,
     genreId: genreMap[document.getElementById('genre').value]||undefined,
       genre:document.getElementById('genre').value||undefined,
         minVoteCount:50,
-        country: document.getElementByld('country').value|| undefined
+        country: document.getElementById('country').value|| undefined
 };
-const mood = document.getElementByld('mood').value;
+const mood = document.getElementById('mood').value;
 
-const loadingBar = document.getElementByld('loadingBar');
-const recommendationContainer = document.getElementByld('recommendationList');
+const loadingBar = document.getElementById('loadingBar');
+const recommendationContainer = document.getElementById('recommendationList');
 
 loadingBar.style.display = 'flex';
 recommendationContainer.innerHTML ="";
@@ -121,15 +120,14 @@ let allMovies = [];
 const maxPagesToFetch = 5;
 
 try{
-  for(let page = 1;page<= maxPageToFetch; page++){
+  for(let page = 1; page<= maxPagesToFetch; page++){
     const movies = await fetchMoviesFromTMDB(filters, page);
     allMovies = allMovies.concat(movies);
   }
 
   const filtered = mood? allMovies.filter(movie=> movie.mood===mood):allMovies;
   if(filtered.length===0){
-    recommendationContainer.innerHTML =<p style="grid-column:1/-1; text-align:
-      center; font-size: 1.2rem; opacity:0.8:">No movies found matching your filters.</p>;
+    recommendationContainer.innerHTML = `<p style="grid-column:1/-1; text-align:center; font-size: 1.2rem; opacity:0.8;">No movies found matching your filters.</p>`;
       return;
   }
 
@@ -141,7 +139,7 @@ try{
 }
 }
 
-function displayRecommendations(container, movies, sectionTitle = 'Recommanded Movies/Series'){
+function displayRecommendations(container, movies, sectionTitle = 'Recommended Movies/Series'){
   container.innerHTML ="";
   movies.forEach(movie =>{
   const card = document.createElement('div');
@@ -162,7 +160,7 @@ card.innerHTML=`
       </div>
     `;
 
-    card.querySelector('.overview-text').style.display+'none';
+    card.querySelector('.overview-text').style.display='none';
     card.querySelector('.watchlist-btn').addEventListener('click', () =>
     addToWatchlist(movie));
     card.querySelector('.toggle-overview-btn').addEventListener('click',()=>{
@@ -188,7 +186,7 @@ card.innerHTML=`
     }
 
     function updateWatchlistUI(){
-    const watchlistContainer = document.getElementByld('watchlistItems');
+    const watchlistContainer = document.getElementById('watchlistItems');
     watchlistContainer.innerHTML ="";
     watchlist.forEach(movie =>{
     const li = document.createElement('li');

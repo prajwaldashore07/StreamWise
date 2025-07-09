@@ -28,7 +28,7 @@
     </header>
 
     <main class="container" role="main" aria-label="Movie Recommendation filters and results">
-      <div class="filters" area-label="Movie filters">
+      <div class="filters" aria-label="Movie filters">
         <div>
           <label for="mood">Select Mood:</label>
           <select id="mood" name="mood">
@@ -77,16 +77,16 @@
         
         <div style="grid-column: 1 / -1;">
             <label for="ratingRange" class="range-label">Minimum IMDB Rating: <span id="ratingValue">5</span></label>
-            <input type="range" id="ratingrange" name="ratingRange" min="0" max="10" step="0.1" value="5">
+            <input type="range" id="ratingRange" name="ratingRange" min="0" max="10" step="0.1" value="5">
         </div>
       </div>
 
-      <div class="button-row">
+      <div class="buttons-row">
         <button id="resetFilters" class="action-btn" title="Reset Filters">Reset Filters 🔄</button>
-        <button id="btnRecommend" class="action-btn">Get Recommendation ▶️</button>
+        <button id="btnRecommend" class="action-btn">Get Recommendations ▶️</button>
       </div>
 
-      <section class="Recommendations" aria-live="polite" aria-label="Recommended movies and series">
+      <section class="recommendations" aria-live="polite" aria-label="Recommended movies and series">
         <h3>Recommended Movies/Series</h3>
         <div id="loadingBar" class="loading-wave">
           <div class="loading-bar"></div>
@@ -97,27 +97,11 @@
         <div id="recommendationList" class="recommendation-grid" tabindex="0"></div>
       </section>
 
-      <section class="Watchlist" aria-live="polite" aria-label="Your watchlist">
+      <section class="watchlist" aria-live="polite" aria-label="Your watchlist">
         <h3>Your Watchlist</h3>
         <ul id="watchlistItems" tabindex="0"></ul>
       </section>
 
-      <section class="slider-section">
-        <h2 class="slider-title">Featured Mood Picks</h2>
-        <div class="slider-container">
-          <button class="slider-btn left" onclick="scrollSlider(-1)">&#10094;</button>
-          
-          <div class="slider" id="slider">
-            <div class="slide-card">🎥 Happy Vibes</div>
-            <div class="slide-card">🍃 Chill Out</div>
-            <div class="slide-card">💪 Get Motivated</div>
-            <div class="slide-card">😢 Tearjerkers</div>
-          </div>
-          
-          <button class="slider-btn right" onclick="scrollSlider(1)">&#10095;</button>
-        </div>
-      </section>
-      
     </main>
     <script src="script.js"></script>
 </body>
