@@ -69,8 +69,9 @@ StreamWise is a sleek and responsive movie recommendation web app that suggests 
 - ✅ Movie Poster Loading with TMDB/OMDB fallback  
 - 🔒 Backend integration for login/signup  
 - 🧠 AI-based mood detection (optional future enhancement)  
-- 📱 Mobile-first redesign  
-- 🌙 Dark/Light mode toggle  
+- 📱 Mobile-first redesign 
+- 🌙 Dark/Light mode toggle
+- 🤖Integration of an intelligent chatbot for real-time user interaction and support  
 
 ---
 
