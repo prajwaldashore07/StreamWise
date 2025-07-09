@@ -79,6 +79,8 @@ StreamWise is a sleek and responsive movie recommendation web app that suggests 
 
 - **Prajwal Dashore**
 - **Rohit117788** – Merged PR: `add-new` branch
+- **Payal Rajput**
+- **Pawni Gour**
 
 ---
 
