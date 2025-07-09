@@ -176,6 +176,20 @@ card.innerHTML=`
     });
     }
 
+    fetch("/recommend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ mood: selectedMood })
+    })
+    .then(res => res.json())
+    .then(movies => {
+      console.log(movies);
+    })
+    .catch(err => console.error("Fetch error:", err));
+    
+
     function addToWatchlist(movie){
     if(watchlist.some(m=>m.title===movie.title)){
     alert('This movie is already in your watchlist.');

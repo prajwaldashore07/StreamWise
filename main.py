@@ -38,3 +38,40 @@ def serve_home():
 def serve_file(path):
     return send_from_directory(app.static_folder, path)
 
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import requests
+
+app = Flask(__name__)
+CORS(app)
+
+TMDB_API_KEY = "d7d0579f82ce09ea6dfe7b54d1438395"
+
+genre_map = {
+    "Happy": 35,        # Comedy
+    "Sad": 18,          # Drama
+    "Excited": 28,      # Action
+    "Scared": 27,       # Horror
+    "Inspired": 99      # Documentary
+}
+
+@app.route('/recommend', methods=['POST'])
+def recommend():
+    data = request.get_json()
+    mood = data.get("mood")
+    genre_id = genre_map.get(mood, 35)
+
+    url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&with_genres={genre_id}&sort_by=popularity.desc"
+    response = requests.get(url)
+    tmdb_data = response.json()
+
+    movies = []
+    for item in tmdb_data.get("results", [])[:10]:
+        movies.append({
+            "title": item["title"],
+            "poster": f"https://image.tmdb.org/t/p/w500{item['poster_path']}"
+        })
+
+    return jsonify(movies)
+
+
