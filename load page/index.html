@@ -101,6 +101,23 @@
         <h3>Your Watchlist</h3>
         <ul id="watchlistItems" tabindex="0"></ul>
       </section>
+
+      <section class="slider-section">
+        <h2 class="slider-title">Featured Mood Picks</h2>
+        <div class="slider-container">
+          <button class="slider-btn left" onclick="scrollSlider(-1)">&#10094;</button>
+          
+          <div class="slider" id="slider">
+            <div class="slide-card">🎥 Happy Vibes</div>
+            <div class="slide-card">🍃 Chill Out</div>
+            <div class="slide-card">💪 Get Motivated</div>
+            <div class="slide-card">😢 Tearjerkers</div>
+          </div>
+          
+          <button class="slider-btn right" onclick="scrollSlider(1)">&#10095;</button>
+        </div>
+      </section>
+      
     </main>
     <script src="script.js"></script>
 </body>
