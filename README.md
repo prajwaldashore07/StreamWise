@@ -66,11 +66,13 @@ _“Because vibes deserve the right flick.”_
    cd StreamWise
 Install dependencies
 
+
 bash
 Copy
 Edit
 pip install -r requirements.txt
 Run the Flask app
+
 
 bash
 Copy
@@ -78,11 +80,15 @@ Edit
 python main.py
 Open in browser
 
+
 arduino
 Copy
 Edit
 http://localhost:5000
 Use the app
+
+
+
 
 Apply filters or search movies
 
@@ -92,7 +98,9 @@ Add favorites to Watchlist (local)
 
 Login/Signup is UI-only for now
 
-🔮 Future Features
+
+
+***🔮 Future Features***
 ✅ Load movie posters using TMDB fallback
 
 🔒 Backend login/signup logic with authentication
@@ -105,7 +113,7 @@ Login/Signup is UI-only for now
 
 🤖 Intelligent chatbot assistant integration
 
-🙌 Contributors
+***🙌 Contributors***
 Prajwal Dashore
 
 Rohit Ahirwar
@@ -114,5 +122,5 @@ Payal Rajput
 
 Pawni Gour
 
-📃 License
+***📃 License***
 This project is intended for educational and personal learning purposes.
