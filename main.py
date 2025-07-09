@@ -18,3 +18,23 @@ def proxy(endpoint):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
+    from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'StreamWise is Live!'
+from flask import Flask, send_from_directory
+
+app = Flask(__name__, static_folder='load page')
+
+@app.route('/')
+def serve_home():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def serve_file(path):
+    return send_from_directory(app.static_folder, path)
+
