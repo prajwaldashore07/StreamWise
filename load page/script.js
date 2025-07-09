@@ -181,13 +181,14 @@ card.innerHTML=`
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ mood: selectedMood })
+      body: JSON.stringify({ mood: "Happy" }) 
     })
     .then(res => res.json())
-    .then(movies => {
-      console.log(movies);
+    .then(data => {
+      console.log("Movie suggestions:", data);
     })
-    .catch(err => console.error("Fetch error:", err));
+    .catch(err => console.error("Error:", err));
+    
     
 
     function addToWatchlist(movie){
